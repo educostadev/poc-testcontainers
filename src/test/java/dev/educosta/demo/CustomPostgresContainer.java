@@ -18,6 +18,7 @@ public class CustomPostgresContainer extends PostgreSQLContainer<CustomPostgresC
   public static CustomPostgresContainer getInstance() {
     if (container == null) {
       container = new CustomPostgresContainer();
+      container.start();
     }
     return container;
   }

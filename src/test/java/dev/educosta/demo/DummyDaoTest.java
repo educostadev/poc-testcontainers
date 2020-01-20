@@ -4,8 +4,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,16 +18,6 @@ import org.testcontainers.containers.PostgreSQLContainer;
 public class DummyDaoTest {
 
   public static PostgreSQLContainer postgreSQLContainer = CustomPostgresContainer.getInstance();
-
-  @BeforeAll
-  static void init() {
-    postgreSQLContainer.start();
-  }
-
-  @AfterAll
-  static void end() {
-    postgreSQLContainer.stop();
-  }
 
   @Autowired
   DummyDao dao;
