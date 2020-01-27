@@ -9,14 +9,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.testcontainers.containers.PostgreSQLContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
 /**
  * See https://stackoverflow.com/questions/59024184/spring-boot-with-testcontainers-how-to-prevent-db-initialization-on-context-re
  */
 @SpringBootTest
 @ContextConfiguration
+@Testcontainers
 public class DummyDaoTest {
 
+  @Container
   public static PostgreSQLContainer postgreSQLContainer = CustomPostgresContainer.getInstance();
 
   @Autowired
